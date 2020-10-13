@@ -1,6 +1,6 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <HelloWorld msg="Welcome to Your Vue.js App" />
 </template>
 
 <script>
@@ -10,6 +10,16 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  mounted() {
+    console.log("hello");
+    // const docRef = db.collection('users').doc('alovelace');
+
+    // await docRef.set({
+    //   first: 'Ada',
+    //   last: 'Lovelace',
+    //   born: 1815
+    // });
   }
 }
 </script>
