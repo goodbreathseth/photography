@@ -1,8 +1,7 @@
 <template>
   <nav>
-
-    <router-link to="/"><h3>Home</h3></router-link>
-    <router-link to="/profile"><h3>Profile</h3></router-link>
+    <router-link to="/"><h3>ConnectMe</h3></router-link>
+    <router-link to="/profile"><h3>Join as a Photographer</h3></router-link>
   </nav>
 </template>
 
@@ -12,5 +11,9 @@ nav {
     padding: .5rem;
     display: flex;
     justify-content: space-around;
+}
+
+a {
+  text-decoration: none;
 }
 </style>
