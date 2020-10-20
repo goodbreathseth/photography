@@ -11,33 +11,34 @@
             </div>
         </div>
         <div class="prof">
-            <h3>Personal</h3>
-            <form>
+            <form @submit.prevent="register">
+                <h3>Personal</h3>
                 <input type="text" v-model="fName" placeholder="First Name" required>
                 <input type="text" v-model="lName" placeholder="Last Name" required>
                 <input type="email" v-model="email" placeholder="Email" required>
                 <input type="password" v-model="pwd" placeholder="Password" required>
                 <textarea id="bio" type="text" v-model="bio" placeholder="Profile Biography" maxlength="500" required/>
-            </form>
-            <p>Characters left:</p> <!-- {{ charactersLeft }}</p>-->
-            <h3>Location</h3>
-            <form>
-                <input class="loc-text" type="text" v-model="country" placeholder="Country" required>
-                <input class="loc-text" type="text" v-model="state" placeholder="State" required>
+
+                <h3>Location</h3>
                 <input class="loc-text" type="text" v-model="city" placeholder="City" required>
+                <input class="loc-text" type="text" v-model="state" placeholder="State" required>
+                <input class="loc-text" type="text" v-model="country" placeholder="Country" required>
                 <input id="spec" v-model="specialty" placeholder="Specialty" required>
+
+                <button><h2>Submit</h2></button>
             </form>
         </div>
     </div>
 
-    <button><h2>Submit</h2></button>
 </template>
 
 <script>
+import firebase from "@/firebaseConfig";
 
 export default {
     data() {
         return {
+            db: firebase.firestore(),
             fName: "",
             lName: "",
             email: "",
@@ -57,8 +58,41 @@ export default {
     },
     methods: {
       addPhoto() {
-          alert("worked!");
+          alert("Updated photo!");
       },
+      async register() {
+        this.db.collection("users").add({
+            fName: this.fName,
+            lName: this.lName,
+            email: this.email,
+            pwd: this.pwd,
+            bio: this.bio,
+            country: this.country,
+            state: this.state,
+            city: this.city,
+            specialty: this.specialty,
+        })
+        .then(() => {
+            alert("Account successfully created!");
+            this.resetForm();
+            this.$router.push('/');
+        })
+        .catch((error) => {
+            alert("Account not created - try again.");
+            console.error("Error adding document: ", error);
+        });
+      },
+      resetForm() {
+        this.fName = "";
+        this.lName = "";
+        this.email = "";
+        this.pwd = "";
+        this.bio = "";
+        this.country = "";
+        this.state = "";
+        this.city = "";
+        this.specialty = "";
+      }
   }
 }
 </script>
@@ -126,6 +160,7 @@ button:hover {
 
     h3 {
         text-align: left;
+        width: 100%;
     }
 
     form {
