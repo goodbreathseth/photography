@@ -20,18 +20,13 @@ export default {
       photographers: [],
     };
   },
-  mounted() {
-      this.getData();
-  },
-  methods: {
-    async getData() {
+  async created() {
       this.db.collection("users").get()
         .then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
             this.photographers.push(doc.data());
           });
         });
-    },
   },
 };
 </script>
