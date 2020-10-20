@@ -2,15 +2,20 @@
 <div class="photographers">
     
     <div v-bind:key="photographer.id" v-for="photographer in photographers">
-        <h2> {{photographer.name}} </h2>
+        <Photographer v-bind:photographer="photographer"/>
     </div>
 </div>
 </template>
 
 <script>
+import Photographer from '@/components/Photographer.vue';
+
 export default {
     name: "Photographers",
-    props: ["photographers"]
+    props: ["photographers"],
+    components: {
+        Photographer
+    }
     
 }
 </script>
@@ -18,8 +23,8 @@ export default {
 <style scoped>
 
     .photographers {
-        background-color: rgb(182, 176, 176);
         text-align: left;
+        border-style: solid;
     }
 
 </style>

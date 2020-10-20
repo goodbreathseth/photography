@@ -7,8 +7,7 @@
 </template>
 
 <script>
-import Photographers from '@/components/Photographers.vue'
-
+import Photographers from '@/components/Photographers.vue';
 
 export default {
     components: {
