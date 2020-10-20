@@ -46,6 +46,9 @@ export default {
             if (stateParam == null && cityParam == null) {
                 this.photographers.push(doc.data());
             }
+            else if (stateParam == "" && cityParam == "") {
+                this.photographers.push(doc.data());
+            }
             else if (stateParam != "" && cityParam == "") {
                 if (doc.data().state != null && stateParam.toLowerCase() == doc.data().state.toLowerCase()){
                     this.photographers.push(doc.data());
