@@ -39,11 +39,14 @@ export default {
             const stateParam = urlParams.get('state');
             const cityParam = urlParams.get('city');
 
+            document.querySelector("#city").value = cityParam;
+            document.querySelector("#state").value = stateParam;
+
+
             if (stateParam == null && cityParam == null) {
                 this.photographers.push(doc.data());
             }
             else if (stateParam != "" && cityParam == "") {
-                console.log("here1");
                 if (doc.data().state != null && stateParam.toLowerCase() == doc.data().state.toLowerCase()){
                     this.photographers.push(doc.data());
                 }
