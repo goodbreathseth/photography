@@ -34,7 +34,31 @@ export default {
       this.db.collection("users").get()
         .then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
-            this.photographers.push(doc.data());
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const stateParam = urlParams.get('state');
+            const cityParam = urlParams.get('city');
+
+            if (stateParam == null && cityParam == null) {
+                this.photographers.push(doc.data());
+            }
+            else if (stateParam != "" && cityParam == "") {
+                console.log("here1");
+                if (doc.data().state != null && stateParam.toLowerCase() == doc.data().state.toLowerCase()){
+                    this.photographers.push(doc.data());
+                }
+            }
+            else if (stateParam == "" && cityParam != "") {
+                if (doc.data().city != null && cityParam.toLowerCase() == doc.data().city.toLowerCase()){
+                    this.photographers.push(doc.data());
+                }
+            }
+            else if (stateParam != "" && cityParam != "") {
+                if (doc.data().state != null && stateParam.toLowerCase() == doc.data().state.toLowerCase() &&
+                    doc.data().city != null && cityParam.toLowerCase() == doc.data().city.toLowerCase()) {
+                    this.photographers.push(doc.data());
+                }
+            }
           });
         });
   },
