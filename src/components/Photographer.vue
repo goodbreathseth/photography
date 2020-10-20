@@ -1,7 +1,7 @@
 <template>
     <div class="photographer">
         <h2>{{photographer.name}}</h2>
-        <h3>{{photographer.location}}</h3>
+        <h3>{{photographer.city}}, {{photographer.state}}</h3>
     </div>
 </template>
 
@@ -18,7 +18,8 @@ export default {
     .photographer {
         padding: 5%;
         background-color:ghostwhite;
-        margin: 1%;
+        margin-top: 1%;
+        margin-bottom: 1%;
     }
 
 
