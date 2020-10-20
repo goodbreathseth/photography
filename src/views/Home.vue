@@ -1,14 +1,14 @@
 <template>
   <div class="homepage">
-    <h1>Connect Me</h1>
-    <h3>Find a Photographer Now!</h3>
+    <h1>ConnectMe!</h1>
+    <h2>Find a Photographer Now!</h2>
     
     <form class="searchForm" action="/">
         <label for="city">City:</label>
         <input type="text" id="city" name="city"><br><br>
-        <label for="state">State:</label>
+        <label for="state" style="margin-left: 20px;">State:</label>
         <input type="text" id="state" name="state"><br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" style="margin-left: 20px;" value="Submit">
     </form>
 
 
@@ -80,7 +80,7 @@ h1 {
   text-align: left;
 }
 
-h3 {
+h2 {
   text-align: left;
 }
 
