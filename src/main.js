@@ -12,9 +12,10 @@ createApp(App)
     .mount("#app");
   
 
-db.collection('users').get().then((snapshot) => {
-    snapshot.docs.forEach(doc => {
-        console.log(doc.data());
-    })
-})
+// db.collection('users').get().then((snapshot) => {
+//     snapshot.docs.forEach(doc => {
+//         console.log(doc.data());
+//     })
+// })
+
 console.log("hello");
