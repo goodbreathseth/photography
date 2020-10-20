@@ -3,7 +3,7 @@
     <h1>Connect Me</h1>
     <h3>Find a Photographer Now!</h3>
     
-    <form class="searchForm" action="/action_page.php">
+    <form class="searchForm" action="/">
         <label for="city">City:</label>
         <input type="text" id="city" name="city"><br><br>
         <label for="state">State:</label>
@@ -57,6 +57,7 @@ h3 {
 .searchForm {
     display: flex;
     flex-direction: row;
+    height: 24px;
 }
 
 input.searchForm {
