@@ -24,7 +24,6 @@ export default {
 
     .photographers {
         text-align: left;
-        border-style: solid;
     }
 
 </style>

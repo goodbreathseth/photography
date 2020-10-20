@@ -1,6 +1,7 @@
 <template>
     <div class="photographer">
         <h2>{{photographer.name}}</h2>
+        <h3>{{photographer.location}}</h3>
     </div>
 </template>
 
@@ -16,7 +17,7 @@ export default {
 <style scoped>
     .photographer {
         padding: 5%;
-        background-color: gray;
+        background-color:ghostwhite;
         margin: 1%;
     }
 
