@@ -5,7 +5,7 @@
     :zoom="8"
     :clickActive="true"
     :moveActive="false"
-    :markers="markers"
+    :markers="Object.values(photographers)"
   />
 </template>
 
@@ -16,33 +16,9 @@ export default {
   },
   data() {
     return {
-      markers: [],
-      // markers: this.photographers,
-      //   markers: this.photographers.map((photographer) => {
-      //     let marker = {};
-      //     marker[photographer.lat] = photographer.value;
-      //     return marker;
-      //   }),
     };
   },
   methods: {},
-  mounted() {
-    // this.photographers.map((photographer) => {
-    //   console.log("photographer:", photographer);
-    //   if (photographer.lat) {
-    //     let marker = {};
-    //     marker.lat = photographer.lat;
-    //     marker.lng = photographer.lng;
-    //     marker.title = photographer.title;
-    //     return marker;
-    //   } else {
-    //     return null;
-    //   }
-    // });
-
-    console.log("map component");
-    console.log(this.photographers);
-  },
 };
 </script>
 

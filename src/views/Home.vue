@@ -70,8 +70,6 @@ export default {
             }
           });
         });
-        console.log("home component:")
-        console.log(this.photographers);
   },
 };
 </script>
