@@ -2,15 +2,16 @@
   <div class="homepage">
     <h1>ConnectMe!</h1>
     <h2>Find a Photographer Now!</h2>
-    
-    <form class="searchForm" action="/">
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city"><br><br>
-        <label for="state" style="margin-left: 20px;">State:</label>
-        <input type="text" id="state" name="state"><br><br>
-        <input type="submit" style="margin-left: 20px;" value="Submit">
-    </form>
 
+    <Map :photographers="photographers" />
+
+    <form class="searchForm" action="/">
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" /><br /><br />
+      <label for="state" style="margin-left: 20px;">State:</label>
+      <input type="text" id="state" name="state" /><br /><br />
+      <input type="submit" style="margin-left: 20px;" value="Submit" />
+    </form>
 
     <Photographers v-bind:photographers="photographers" />
   </div>
@@ -19,10 +20,12 @@
 <script>
 import firebase from "@/firebaseConfig";
 import Photographers from "@/components/Photographers.vue";
+import Map from "@/components/Map.vue";
 
 export default {
   components: {
     Photographers,
+    Map,
   },
   data() {
     return {
@@ -67,6 +70,8 @@ export default {
             }
           });
         });
+        console.log("home component:")
+        console.log(this.photographers);
   },
 };
 </script>
@@ -85,12 +90,12 @@ h2 {
 }
 
 .searchForm {
-    display: flex;
-    flex-direction: row;
-    height: 24px;
+  display: flex;
+  flex-direction: row;
+  height: 24px;
 }
 
 input.searchForm {
-    padding: 10%;
+  padding: 10%;
 }
 </style>

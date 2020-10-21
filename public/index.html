@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title><%= htmlWebpackPlugin.options.title %></title>
-    <style>
-      body {
-        margin: 0px;
+    <style type="text/css">
+      #map {
+        height: 100%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
       }
     </style>
   </head>
@@ -34,5 +39,10 @@
 
     <!-- Initialize Firebase -->
     <script src="/__/firebase/init.js"></script>
+
+    <!-- <script defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu5jAc8P-AltWINmsSQxtBdfK0Y2XCATw&callback=initMap">
+    </script>
+    <script>window._google = google;</script> -->
   </body>
 </html>
