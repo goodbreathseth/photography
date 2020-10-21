@@ -35,7 +35,7 @@ a:link {
 }
 
 a:visited {
-  color: #000099;
+  color: #102285;
 }
 
 img {
