@@ -108,6 +108,10 @@ export default {
 
 <style scoped>
 
+    h1 {
+        color: #081144;
+    }
+
     #content {
         margin-top: 10%;
     }
@@ -155,6 +159,11 @@ export default {
         margin-top: 30px;
         font-size: 300px;
         align-self: center;
+        color: #081144
+    }
+
+    h2 {
+        color: #081144;
     }
 
     p {
@@ -164,6 +173,7 @@ export default {
     h3 {
         text-align: left;
         width: 100%;
+        color: #081144;
     }
 
     form {
@@ -205,14 +215,19 @@ export default {
         margin-right: 10px;
         height: auto;
         font-family: Avenir, Helvetica, Arial, sans-serif;
-        color: #2c3e50;
-        background-color: #B2B4F1;
+        color: white;
+        background-color: #081144;
+        border: none;
         text-align: center;
         border-radius: 5px;
-        border-style: none;
+    }
+
+    button h2 {
+        color: white;
     }
 
     button:hover {
-        background-color: #8486E9;
+        background-color: #060c2d;
+        color: white;
     }
 </style>
