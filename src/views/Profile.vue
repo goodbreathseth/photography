@@ -227,10 +227,6 @@ form {
   flex-wrap: wrap;
 }
 
-    h1 {
-        color: #081144;
-    }
-
     #content {
         margin-top: 10%;
     }
@@ -333,7 +329,6 @@ form {
         width: 100%;
         margin-right: 10px;
         height: auto;
-        font-family: Avenir, Helvetica, Arial, sans-serif;
         color: white;
         background-color: #081144;
         border: none;

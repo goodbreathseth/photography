@@ -3,8 +3,8 @@
         <h2>{{photographer.fName}} {{photographer.lName}}</h2>
         <h3>{{photographer.city}}, {{photographer.state}}</h3>
         <p>{{photographer.bio}}</p>
-        <h3>Email: {{photographer.email}}</h3>
-        <h3>Specialty: {{photographer.specialty}}</h3>
+        <p>Email: <strong>{{photographer.email}}</strong></p>
+        <p>Specialty: {{photographer.specialty}}</p>
     </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
 
 <style scoped>
     .photographer {
-        padding: 5%;
+        padding: .5rem 2rem;
         background-color:white;
         margin-top: 1%;
         margin-bottom: 2%;

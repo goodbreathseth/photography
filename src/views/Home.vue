@@ -1,15 +1,16 @@
 <template>
   <div class="homepage">
     <h1>ConnectMe!</h1>
-    <h2>Find a Photographer Now!</h2>
+    <h2>Find Photographers Near Me</h2>
 
     <Map :photographers="photographers" />
 
     <form class="searchForm" action="/">
+      <p><strong>Filter:</strong></p>
       <label for="city">City:</label>
-      <input type="text" id="city" name="city" /><br /><br />
+      <input type="text" id="city" name="city" />
       <label for="state" style="margin-left: 20px;">State:</label>
-      <input type="text" id="state" name="state" /><br /><br />
+      <input type="text" id="state" name="state" />
       <input type="submit" style="margin-left: 20px;" value="Submit" />
     </form>
 
@@ -86,42 +87,35 @@ export default {
   margin-top: 10%;
 }
 
-h1 {
-  text-align: left;
-  color: #102285
-}
 
-h2 {
-  text-align: left;
-  color: #102285
-}
 
 .searchForm {
   display: flex;
-  flex-direction: row;
   padding: 2%;
   padding-left: 0;
+  align-content: center;
+  height: 2rem;
 }
 
 label {
-  font-size: 28px;
-  font-weight: bold;
-  color: #102285
-}
-
-input#city, input#state {
-  font-size: 20px;
+  color: #102285;
+  align-self: center;
+  margin: 0 8px;
 }
 
 input[type="submit"] {
   color: white;
   background-color: #081144;
-  font-size: 1.5em;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  font-weight: bold;
   border: none;
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 5px;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+p {
+  align-self: center;
+  margin-right: 8px;
 }
 </style>
