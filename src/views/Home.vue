@@ -88,19 +88,40 @@ export default {
 
 h1 {
   text-align: left;
+  color: #102285
 }
 
 h2 {
   text-align: left;
+  color: #102285
 }
 
 .searchForm {
   display: flex;
   flex-direction: row;
-  height: 24px;
+  padding: 2%;
+  padding-left: 0;
 }
 
-input.searchForm {
-  padding: 10%;
+label {
+  font-size: 28px;
+  font-weight: bold;
+  color: #102285
+}
+
+input#city, input#state {
+  font-size: 20px;
+}
+
+input[type="submit"] {
+  color: white;
+  background-color: #081144;
+  font-size: 1.5em;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  border: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
 }
 </style>

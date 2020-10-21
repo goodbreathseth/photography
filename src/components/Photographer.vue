@@ -20,11 +20,9 @@ export default {
 <style scoped>
     .photographer {
         padding: 5%;
-        background-color:ghostwhite;
+        background-color:white;
         margin-top: 1%;
-        margin-bottom: 1%;
+        margin-bottom: 2%;
+        color: #102285
     }
-
-
-
 </style>
