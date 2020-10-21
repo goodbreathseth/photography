@@ -34,42 +34,48 @@ export default {
     };
   },
   async created() {
-      this.db.collection("users").get()
-        .then((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
+    this.db
+      .collection("users")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          const urlParams = new URLSearchParams(window.location.search);
+          const stateParam = urlParams.get("state");
+          const cityParam = urlParams.get("city");
 
-            const urlParams = new URLSearchParams(window.location.search);
-            const stateParam = urlParams.get('state');
-            const cityParam = urlParams.get('city');
+          document.querySelector("#city").value = cityParam;
+          document.querySelector("#state").value = stateParam;
 
-            document.querySelector("#city").value = cityParam;
-            document.querySelector("#state").value = stateParam;
-
-
-            if (stateParam == null && cityParam == null) {
-                this.photographers.push(doc.data());
+          if (stateParam == null && cityParam == null) {
+            this.photographers.push(doc.data());
+          } else if (stateParam == "" && cityParam == "") {
+            this.photographers.push(doc.data());
+          } else if (stateParam != "" && cityParam == "") {
+            if (
+              doc.data().state != null &&
+              stateParam.toLowerCase() == doc.data().state.toLowerCase()
+            ) {
+              this.photographers.push(doc.data());
             }
-            else if (stateParam == "" && cityParam == "") {
-                this.photographers.push(doc.data());
+          } else if (stateParam == "" && cityParam != "") {
+            if (
+              doc.data().city != null &&
+              cityParam.toLowerCase() == doc.data().city.toLowerCase()
+            ) {
+              this.photographers.push(doc.data());
             }
-            else if (stateParam != "" && cityParam == "") {
-                if (doc.data().state != null && stateParam.toLowerCase() == doc.data().state.toLowerCase()){
-                    this.photographers.push(doc.data());
-                }
+          } else if (stateParam != "" && cityParam != "") {
+            if (
+              doc.data().state != null &&
+              stateParam.toLowerCase() == doc.data().state.toLowerCase() &&
+              doc.data().city != null &&
+              cityParam.toLowerCase() == doc.data().city.toLowerCase()
+            ) {
+              this.photographers.push(doc.data());
             }
-            else if (stateParam == "" && cityParam != "") {
-                if (doc.data().city != null && cityParam.toLowerCase() == doc.data().city.toLowerCase()){
-                    this.photographers.push(doc.data());
-                }
-            }
-            else if (stateParam != "" && cityParam != "") {
-                if (doc.data().state != null && stateParam.toLowerCase() == doc.data().state.toLowerCase() &&
-                    doc.data().city != null && cityParam.toLowerCase() == doc.data().city.toLowerCase()) {
-                    this.photographers.push(doc.data());
-                }
-            }
-          });
+          }
         });
+      });
   },
 };
 </script>
