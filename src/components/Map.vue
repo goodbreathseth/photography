@@ -16,16 +16,17 @@ export default {
   },
   data() {
     return {
+        componentKey: 0,
     };
   },
-  methods: {},
+  methods: {
+      update() {
+          this.componentKey++;
+        //   this.$forceUpdate();
+      }
+  },
 };
 </script>
 
 <style scoped>
-/* div {
-    position: absolute;
-    left: 0;
-    top: 0;
-} */
 </style>
