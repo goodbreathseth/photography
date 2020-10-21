@@ -137,7 +137,7 @@ export default {
           city: this.city,
           specialty: this.specialty,
           title: this.fName + " " + this.lName,
-          infoWindow: `<img src="https://picsum.photos/150/200"/><br/><strong>${this.fName} ${this.lName}</strong>`,
+          infoWindow: `<img src="https://picsum.photos/150/150"/><br/><strong>${this.fName} ${this.lName}</strong>`,
           lat: lat,
           lng: lng,
         })
