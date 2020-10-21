@@ -5,7 +5,8 @@
 
     <div id="profile">
         <div class="img-div">
-            <div id="img-cont" @click="addPhoto">
+            <div id="img-cont">
+                <input id="img-input" type="file" accept="image/*" @change="uploadPhoto" title="">
                 <i class='far fa-user-circle'></i>
                 <h2>Upload Photo</h2>
             </div>
@@ -13,16 +14,22 @@
         <div class="prof">
             <form @submit.prevent="register">
                 <h3>Personal</h3>
-                <input type="text" v-model="fName" placeholder="First Name" required>
-                <input type="text" v-model="lName" placeholder="Last Name" required>
-                <input type="email" v-model="email" placeholder="Email" required>
-                <input type="password" v-model="pwd" placeholder="Password" required>
+                <div class="info-cont">
+                    <input type="text" v-model="fName" placeholder="First Name" required>
+                    <input type="text" v-model="lName" placeholder="Last Name" required>
+                </div>
+                <div class="info-cont">
+                    <input type="email" v-model="email" placeholder="Email" required>
+                    <input type="password" v-model="pwd" placeholder="Password" required>
+                </div>
                 <textarea id="bio" type="text" v-model="bio" placeholder="Profile Biography" maxlength="500" required/>
 
                 <h3>Location</h3>
-                <input class="loc-text" type="text" v-model="city" placeholder="City" required>
-                <input class="loc-text" type="text" v-model="state" placeholder="State" required>
-                <input class="loc-text" type="text" v-model="country" placeholder="Country" required>
+                <div id="loc-cont">
+                    <input class="loc-text" type="text" v-model="city" placeholder="City" required>
+                    <input class="loc-text" type="text" v-model="state" placeholder="State" required>
+                    <input class="loc-text" type="text" v-model="country" placeholder="Country" required>
+                </div>
                 <input id="spec" v-model="specialty" placeholder="Specialty" required>
 
                 <button><h2>Submit</h2></button>
@@ -57,8 +64,8 @@ export default {
       document.head.appendChild(recaptchaScript);
     },
     methods: {
-      addPhoto() {
-          alert("Updated photo!");
+      uploadPhoto() {
+          alert("file uploaded!");
       },
       async register() {
         this.db.collection("users").add({
@@ -99,36 +106,6 @@ export default {
 
 <style scoped>
 
-i {
-    align-self: center;
-}
-
-input {
-    border-radius: 5px;
-    border: 1px solid;
-}
-
-#bio {
-    border: 1px solid;
-    border-radius: 5px;
-    resize: none;
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-}
-
-button {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    color: #2c3e50;
-    background-color: #B9CFF7;
-    text-align: center;
-    border-radius: 5px;
-    border-style: none;
-}
-
-button:hover {
-    background-color: #9BBBF4;
-}
-
-@media only screen and (min-width: 961px) {
     #profile {
         padding: 0px 50px 50px 50px;
         display: flex;
@@ -137,17 +114,37 @@ button:hover {
     }
 
     .prof {
-        flex: 75%;
+        flex: 60%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info-cont {
+        display: flex;
+        flex: 100%;
+    }
+
+    #loc-cont {
+        display: flex;
+        flex: 100%;
     }
 
     .img-div {
-        margin-right: 50px;
         flex: 25%;
     }
-    
-    .img-div:hover {
+
+    #img-input {
+        position: absolute;
+        flex: 100%;
+        height: 400px;
         cursor: pointer;
+        opacity: 0;
     }
+
+    #img-input:hover {
+        title: "";
+    }
+
     i {
         margin-top: 30px;
         font-size: 300px;
@@ -170,31 +167,46 @@ button:hover {
     }
 
     input {
-        width: 317px;
+        width: 100%;
         height: auto;
         padding: 10px;
-        margin-bottom: 10px;
-        margin-right: 10px;
+        margin: 0 10px 10px 0px;
+        border-radius: 5px;
+        border: 1px solid #2c3e50;
     }
 
     .loc-text {
-        width: 200px;
+        flex: 33.3%;
     }
 
     #spec {
-        width: 665px;
+        flex: 100%;
     }
 
     #bio {
         padding: 10px;
-        width: 681px;
+        margin-right: 10px;
+        flex: 100%;
         height: 100px;
+        border: 1px solid #2c3e50;
+        border-radius: 5px;
+        resize: none;
+        font-family: Avenir, Helvetica, Arial, sans-serif;
     }
 
     button {
-        margin-bottom: 50px;
-        width: 400px;
+        width: 100%;
+        margin-right: 10px;
         height: auto;
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        color: #2c3e50;
+        background-color: #B2B4F1;
+        text-align: center;
+        border-radius: 5px;
+        border-style: none;
     }
-}
+
+    button:hover {
+        background-color: #8486E9;
+    }
 </style>
