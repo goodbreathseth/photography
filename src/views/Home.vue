@@ -83,6 +83,7 @@ export default {
 <style scoped>
 .homepage {
   margin: 5%;
+  margin-top: 10%;
 }
 
 h1 {
