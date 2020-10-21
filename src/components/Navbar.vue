@@ -10,10 +10,15 @@
 
 <style scoped>
 nav {
-    background-color: ghostwhite;
+    background-color: white;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
     padding: .5rem;
     display: flex;
     justify-content: space-around;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
 }
 
 h3 {

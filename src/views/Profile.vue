@@ -1,39 +1,41 @@
 <template>
     <meta name='viewport'
       content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
-    <h1>Create a Photographer's Account</h1>
+    <div id="content">
+        <h1>Create a Photographer's Account</h1>
 
-    <div id="profile">
-        <div class="img-div">
-            <div id="img-cont">
-                <input id="img-input" type="file" accept="image/*" @change="uploadPhoto" title="">
-                <i class='far fa-user-circle'></i>
-                <h2>Upload Photo</h2>
+        <div id="profile">
+            <div class="img-div">
+                <div id="img-cont">
+                    <input id="img-input" type="file" accept="image/*" @change="uploadPhoto" title="">
+                    <i class='far fa-user-circle'></i>
+                    <h2>Upload Photo</h2>
+                </div>
             </div>
-        </div>
-        <div class="prof">
-            <form @submit.prevent="register">
-                <h3>Personal</h3>
-                <div class="info-cont">
-                    <input type="text" v-model="fName" placeholder="First Name" required>
-                    <input type="text" v-model="lName" placeholder="Last Name" required>
-                </div>
-                <div class="info-cont">
-                    <input type="email" v-model="email" placeholder="Email" required>
-                    <input type="password" v-model="pwd" placeholder="Password" required>
-                </div>
-                <textarea id="bio" type="text" v-model="bio" placeholder="Profile Biography" maxlength="500" required/>
+            <div class="prof">
+                <form @submit.prevent="register">
+                    <h3>Personal</h3>
+                    <div class="info-cont">
+                        <input type="text" v-model="fName" placeholder="First Name" required>
+                        <input type="text" v-model="lName" placeholder="Last Name" required>
+                    </div>
+                    <div class="info-cont">
+                        <input type="email" v-model="email" placeholder="Email" required>
+                        <input type="password" v-model="pwd" placeholder="Password" required>
+                    </div>
+                    <textarea id="bio" type="text" v-model="bio" placeholder="Profile Biography" maxlength="500" required/>
 
-                <h3>Location</h3>
-                <div id="loc-cont">
-                    <input class="loc-text" type="text" v-model="city" placeholder="City" required>
-                    <input class="loc-text" type="text" v-model="state" placeholder="State" required>
-                    <input class="loc-text" type="text" v-model="country" placeholder="Country" required>
-                </div>
-                <input id="spec" v-model="specialty" placeholder="Specialty" required>
+                    <h3>Location</h3>
+                    <div id="loc-cont">
+                        <input class="loc-text" type="text" v-model="city" placeholder="City" required>
+                        <input class="loc-text" type="text" v-model="state" placeholder="State" required>
+                        <input class="loc-text" type="text" v-model="country" placeholder="Country" required>
+                    </div>
+                    <input id="spec" v-model="specialty" placeholder="Specialty" required>
 
-                <button><h2>Submit</h2></button>
-            </form>
+                    <button><h2>Submit</h2></button>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -105,6 +107,10 @@ export default {
 </script>
 
 <style scoped>
+
+    #content {
+        margin-top: 10%;
+    }
 
     #profile {
         padding: 0px 50px 50px 50px;
