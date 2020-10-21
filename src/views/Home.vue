@@ -2,7 +2,7 @@
   <div class="homepage">
     <h1>ConnectMe!</h1>
     <h2>Find a Photographer Now!</h2>
-    
+
     <form class="searchForm" action="/">
         <label for="city">City:</label>
         <input type="text" id="city" name="city"><br><br>
