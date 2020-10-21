@@ -16,13 +16,21 @@ nav {
     justify-content: space-around;
 }
 
+h3 {
+}
+
 div {
   display: flex;
   justify-content: flex-start;
 }
 
-a {
+a:link {
   text-decoration: none;
+  color: #000099;
+}
+
+a:visited {
+  color: #000099;
 }
 
 img {

@@ -172,7 +172,7 @@ export default {
         padding: 10px;
         margin: 0 10px 10px 0px;
         border-radius: 5px;
-        border: 1px solid;
+        border: 1px solid #2c3e50;
     }
 
     .loc-text {
@@ -188,7 +188,7 @@ export default {
         margin-right: 10px;
         flex: 100%;
         height: 100px;
-        border: 1px solid;
+        border: 1px solid #2c3e50;
         border-radius: 5px;
         resize: none;
         font-family: Avenir, Helvetica, Arial, sans-serif;
