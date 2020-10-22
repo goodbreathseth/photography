@@ -1,6 +1,9 @@
 <template>
   <div class="outer">
     <h1>About Us</h1>
+
+    <img src="../assets/Logo.svg"/>
+
     <h3>
       ConnectMe is a one-stop-shop for photographers that allows them to perform
       all tasks for their job.
@@ -11,7 +14,7 @@
     </h3>
 
     <div class="decoration"></div>
-    <a href="https://forms.gle/YSryXGcg4VPMYTCF8"><h2>Take our survey here</h2></a>
+    <a href="https://forms.gle/YSryXGcg4VPMYTCF8"><h2 class="surveyLink">Take our survey here</h2></a>
     <div class="decoration"></div>
 
     <form class="contactForm" @submit.prevent="submit">
@@ -100,12 +103,11 @@ export default {
   border-radius: 32px;
 }
 
-.contactForm {
-  
-} 
+.surveyLink:hover {
+  color: black;
+}
 
 .contactFields {
-
   display: flex;
   flex-direction: column;
 }
