@@ -1,8 +1,9 @@
 <template>
   <nav>
     <router-link to="/" style="display:flex;"><img src="../assets/Logo.svg"/><h3>ConnectMe</h3></router-link>
-    <router-link to="/profile"><h3>Join as a Photographer</h3></router-link>
     <router-link to="/contact"><h3>About Us</h3></router-link>
+    <router-link to="/profile"><h3>Join as a Photographer</h3></router-link>
+
   </nav>
 </template>
 
@@ -20,9 +21,6 @@ nav {
     z-index: 2;
 }
 
-h3 {
-}
-
 div {
   display: flex;
   justify-content: flex-start;
@@ -30,7 +28,7 @@ div {
 
 a:link {
   text-decoration: none;
-  color: #000099;
+  color: #102285;
 }
 
 a:visited {

@@ -115,9 +115,13 @@ input[type="submit"] {
   border: none;
   padding-left: 20px;
   padding-right: 20px;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: 400;
+}
+
+input[type="submit"]:hover {
+  background-color: #060c2d;
 }
 
 p {
