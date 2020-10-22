@@ -102,12 +102,9 @@ label {
 }
 
 input[type="text"] {
-  border-radius: 8px;
   border: none;
   box-shadow: 0 1px 4px 0 lavender;
-}
-
-input[type="text"] {
+  border-radius: 8px;
   outline: none;
   color: #081144;
 }
