@@ -1,10 +1,8 @@
 <template>
   <nav>
-    <div>
-      <img src="../assets/Logo.svg"/>
-      <router-link to="/"><h3>ConnectMe</h3></router-link>
-    </div>
+    <router-link to="/" style="display:flex;"><img src="../assets/Logo.svg"/><h3>ConnectMe</h3></router-link>
     <router-link to="/profile"><h3>Join as a Photographer</h3></router-link>
+    <router-link to="/contact"><h3>About Us</h3></router-link>
   </nav>
 </template>
 
