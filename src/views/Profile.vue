@@ -133,6 +133,8 @@ export default {
       let lng = data.results[0].geometry.location.lng + (Math.random() * (0.01 - 0.0001) + 0.0001);
       lng = lng.toFixed(7);
 
+      let seed = Math.floor(Math.random() * (1000 - 1) + 1);
+
       this.db
         .collection("users")
         .add({
@@ -146,7 +148,7 @@ export default {
           city: this.city,
           specialty: this.specialty,
           title: this.fName + " " + this.lName,
-          infoWindow: `<img src="https://picsum.photos/150/150"/><br/><strong>${this.fName} ${this.lName}</strong>`,
+          infoWindow: `<img src="https://picsum.photos/seed/${seed}/150/150"/><br/><strong>${this.fName} ${this.lName}</strong>`,
           lat: lat,
           lng: lng,
         })
