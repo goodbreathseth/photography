@@ -11,11 +11,15 @@
         <input
           id="img-input"
           type="file"
+          name="image"
           accept="image/*"
-          @change="uploadPhoto"
+          @change="uploadPhoto($event)"
           title=""
         />
-        <i class="far fa-user-circle"></i>
+        <i id="icon" class="far fa-user-circle"></i>
+        <div id="img-ico">
+          <img id="img-output" src=""/>
+        </div>
         <h2>Upload Photo</h2>
       </div>
     </div>
@@ -109,8 +113,13 @@ export default {
     document.head.appendChild(recaptchaScript);
   },
   methods: {
-    uploadPhoto() {
-      alert("file uploaded!");
+    uploadPhoto(event) {
+      let image = document.getElementById('img-output');
+      image.src = URL.createObjectURL(event.target.files[0]);
+      if (document.getElementById('icon') !== null) {
+        let icon = document.getElementById('icon');
+        icon.remove();
+      }
     },
     async register() {
       const response = await fetch(
@@ -194,6 +203,19 @@ export default {
   flex: 25%;
 }
 
+#img-ico {
+  flex: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+#img-output {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: -70px;
+}
+
 #img-input {
   position: absolute;
   flex: 100%;
@@ -274,11 +296,11 @@ form {
         margin-top: 30px;
         font-size: 300px;
         align-self: center;
-        color: #081144
+        color: #081144;
     }
 
     h2 {
-        color: #081144;
+        color: #102285;
     }
 
     p {
@@ -288,7 +310,7 @@ form {
     h3 {
         text-align: left;
         width: 100%;
-        color: #081144;
+        color: #102285;
     }
 
     form {
@@ -302,8 +324,14 @@ form {
         height: auto;
         padding: 10px;
         margin: 0 10px 10px 0px;
-        border-radius: 5px;
-        border: 1px solid #2c3e50;
+        border-radius: 8px;
+        border: none;
+        box-shadow: 0 1px 4px 0 lavender;
+    }
+
+    input:focus {
+      outline: none;
+      color: #081144;
     }
 
     .loc-text {
@@ -319,10 +347,16 @@ form {
         margin-right: 10px;
         flex: 100%;
         height: 100px;
-        border: 1px solid #2c3e50;
-        border-radius: 5px;
+        border: none;
+        box-shadow: 0 1px 4px 0 lavender;
+        border-radius: 8px;
         resize: none;
         font-family: Avenir, Helvetica, Arial, sans-serif;
+    }
+
+    #bio:focus {
+      outline: none;
+      color: #081144;
     }
 
     button {

@@ -11,7 +11,7 @@
 <style scoped>
 nav {
     background-color: white;
-    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
+    box-shadow: 0 1px 4px 0 lavender;
     padding: .5rem;
     display: flex;
     justify-content: space-around;

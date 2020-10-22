@@ -84,10 +84,8 @@ export default {
 <style scoped>
 .homepage {
   margin: 5%;
-  margin-top: 15%;
+  margin-top: 10%;
 }
-
-
 
 .searchForm {
   display: flex;
@@ -101,6 +99,17 @@ label {
   color: #102285;
   align-self: center;
   margin: 0 8px;
+}
+
+input[type="text"] {
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 1px 4px 0 lavender;
+}
+
+input[type="text"] {
+  outline: none;
+  color: #081144;
 }
 
 input[type="submit"] {
